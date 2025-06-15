@@ -103,13 +103,22 @@ export default {
 
 .search-section {
     max-width: 800px;
-    margin: 20px auto;
+    margin: 32px auto 20px auto;
     display: flex;
     gap: 20px;
+    align-items: center;
+    background: #fff;
+    border-radius: 12px;
+    box-shadow: 0 2px 12px 0 rgba(0,0,0,0.07);
+    padding: 24px 32px;
 }
 
 .search-input {
     flex: 1;
+}
+
+.filters {
+    min-width: 160px;
 }
 
 .resources-container {

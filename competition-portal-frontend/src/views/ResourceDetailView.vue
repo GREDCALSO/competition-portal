@@ -83,20 +83,27 @@ export default {
 }
 
 .detail-container {
-  max-width: 800px;
-  margin: 30px auto;
-  padding: 20px;
-  border: 1px solid #eee;
-  border-radius: 8px;
-  box-shadow: 0 2px 12px 0 rgba(0, 0, 0, 0.1);
+    max-width: 800px;
+    margin: 30px auto;
+    padding: 32px;
+    border-radius: 14px;
+    box-shadow: 0 4px 24px rgba(60, 60, 60, 0.10);
+    background: #fff;
+}
+
+.detail-container h1 {
+    font-size: 28px;
+    font-weight: bold;
+    margin-bottom: 18px;
+    color: #207cca;
 }
 
 .meta {
-  margin: 15px 0;
+    margin: 15px 0;
 }
 
 .meta .el-tag {
-  margin-right: 10px;
+    margin-right: 10px;
 }
 
 /* 新增的适用竞赛样式 */
@@ -105,7 +112,9 @@ export default {
 }
 
 .content {
-  margin-top: 20px;
-  line-height: 1.6;
+    margin-top: 20px;
+    line-height: 1.7;
+    font-size: 16px;
+    color: #444;
 }
 </style>

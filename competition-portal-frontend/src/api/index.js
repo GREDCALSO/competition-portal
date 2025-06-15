@@ -90,5 +90,8 @@ export default {
   },
   checkFavorite(userId, refId) {
     return api.get(`/favorites/check/${userId}/${refId}`)
+  },
+  createResource(data) {
+    return api.post('/resources', data)
   }
 }

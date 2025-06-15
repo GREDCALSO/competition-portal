@@ -139,4 +139,34 @@ public class FavoriteController {
         response.setSuccess(favorRecordRepository.existsByUser_UserIDAndRef_RefID(userId, refId));
         return ResponseEntity.ok(response);
     }
+
+    @GetMapping("/classify/{userId}/{classify}")
+    public ResponseEntity<FavoriteResponse> getFavoritesByClassify(
+            @PathVariable Long userId,
+            @PathVariable String classify) {
+
+        FavoriteResponse response = new FavoriteResponse();
+
+        // 验证用户存在
+        if (!userRepository.existsById(userId)) {
+            response.setSuccess(false);
+            response.setMessage("用户不存在");
+            return ResponseEntity.badRequest().body(response);
+        }
+
+        // 获取收藏的资源
+        List<RefInfo> favorites = favorRecordRepository.findByUser_UserID(userId)
+                .stream()
+                .map(FavorRecord::getRef)
+                .filter(ref -> classify.isEmpty() || ref.getClassification().equals(classify))
+                .collect(Collectors.toList());
+
+        // 获取收藏夹
+        List<FavorFolder> folders = favorFolderRepository.findByUser_UserID(userId);
+
+        response.setSuccess(true);
+        response.setFavorites(favorites);
+        response.setFolders(folders);
+        return ResponseEntity.ok(response);
+    }
 }

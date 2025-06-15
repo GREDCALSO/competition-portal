@@ -121,44 +121,56 @@ export default {
 
 <style scoped>
 .resource-card {
-    margin-bottom: 20px;
-    height: 280px; /* 增加高度以容纳新内容 */
+    margin-bottom: 24px;
+    height: 300px;
     display: flex;
     flex-direction: column;
+    border-radius: 14px;
+    box-shadow: 0 4px 24px rgba(60, 60, 60, 0.10);
+    transition: box-shadow 0.3s, transform 0.3s;
+    background: #fff;
 }
-
+.resource-card:hover {
+    transform: translateY(-4px) scale(1.03);
+    box-shadow: 0 8px 32px rgba(60, 60, 60, 0.18);
+}
 .card-header {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    font-size: 18px;
+    font-weight: 600;
 }
-
 .card-content {
     flex: 1;
     overflow: hidden;
+    padding-top: 8px;
 }
-
 .card-content p {
-    color: #666;
-    font-size: 14px;
-    line-height: 1.5;
-    margin-bottom: 10px; /* 增加下边距 */
+    color: #444;
+    font-size: 15px;
+    line-height: 1.7;
+    margin-bottom: 10px;
+    max-height: 3.4em;           /* 最多显示2行（1.7*2） */
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;       /* 显示2行，多余省略 */
+    -webkit-box-orient: vertical;
 }
-
-/* 新增的适用竞赛样式 */
 .competition-tag {
     margin: 10px 0;
 }
-
 .tags {
     margin-top: 10px;
     display: flex;
     flex-wrap: wrap;
-    gap: 5px;
+    gap: 6px;
 }
-
 .card-actions {
     display: flex;
-    justify-content: space-between;
+    justify-content: flex-end;
+    gap: 12px;
+    margin-top: 10px;
 }
 </style>

@@ -10,6 +10,8 @@
         </nav>
         <div class="user-actions">
             <template v-if="user">
+                <!-- 新增上传资源按钮 -->
+                <el-button type="primary" @click="$router.push('/upload')">上传资源</el-button>
                 <el-dropdown>
                     <span class="user-info">
                         <el-avatar :size="30"
@@ -63,46 +65,48 @@ export default {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 0 20px;
-    height: 60px;
+    padding: 0 32px;
+    height: 64px;
     background: linear-gradient(135deg, #1e5799 0%, #207cca 51%, #2989d8 100%);
     color: white;
-    box-shadow: 0 2px 12px 0 rgba(0, 0, 0, 0.1);
+    box-shadow: 0 2px 12px 0 rgba(0, 0, 0, 0.10);
+    border-radius: 0 0 12px 12px;
 }
 
 .logo {
-    font-size: 24px;
+    font-size: 26px;
     font-weight: bold;
+    letter-spacing: 2px;
 }
 
 .main-nav {
     display: flex;
-    gap: 30px;
+    gap: 36px;
 }
 
 .main-nav a {
-    color: rgba(255, 255, 255, 0.8);
+    color: rgba(255, 255, 255, 0.85);
     text-decoration: none;
-    font-size: 16px;
+    font-size: 17px;
     transition: color 0.3s;
 }
 
 .main-nav a:hover,
 .main-nav a.router-link-exact-active {
-    color: white;
-    font-weight: 500;
+    color: #fff;
+    font-weight: 600;
 }
 
 .user-actions {
     display: flex;
     align-items: center;
-    gap: 15px;
+    gap: 18px;
 }
 
 .user-info {
     display: flex;
     align-items: center;
-    gap: 8px;
+    gap: 10px;
     cursor: pointer;
     color: white;
 }
